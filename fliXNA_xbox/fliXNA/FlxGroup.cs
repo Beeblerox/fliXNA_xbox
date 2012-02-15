@@ -164,5 +164,55 @@ namespace fliXNA_xbox
             }
             return null;
         }
+
+        /**
+        * Call this function to find out how many members of the group are not dead.
+        *
+        * @return The number of <code>FlxBasic</code>s flagged as not dead. Returns -1 if group is empty.
+        */
+        public int countAlive()
+        {
+            int count = -1;
+            FlxBasic basic;
+            uint i = 0;
+            while (i < length)
+            {
+                basic = members[(int)i++] as FlxBasic;
+                if (basic != null)
+                {
+                    if (count < 0)
+                        count = 0;
+                    if (basic.exists && basic.alive)
+                        count++;
+                }
+
+            }
+            return count;
+        }
+  
+        /**
+        * Call this function to find out how many members of the group are dead.
+        *
+        * @return The number of <code>FlxBasic</code>s flagged as dead. Returns -1 if group is empty.
+        */
+        public int countDead()
+        {
+            int count = -1;
+            FlxBasic basic;
+            uint i = 0;
+            while (i < length)
+            {
+                basic = members[(int)i++] as FlxBasic;
+                if (basic != null)
+                {
+                    if (count < 0)
+                        count = 0;
+                    if (!basic.alive)
+                        count++;
+                }
+
+            }
+            return count;
+        }
     }
 }

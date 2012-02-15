@@ -33,8 +33,8 @@ namespace fliXNA_xbox
             FlxG.state = State;
             FlxG.zoom = Zoom;
             graphics = new GraphicsDeviceManager(this);
-            graphics.PreferredBackBufferWidth = Width / (int)Zoom;
-            graphics.PreferredBackBufferHeight = Height / (int)Zoom;
+            graphics.PreferredBackBufferWidth = Width * (int)Zoom;
+            graphics.PreferredBackBufferHeight = Height * (int)Zoom;
             graphics.ApplyChanges();
             Content.RootDirectory = ContentRootDirectory;
         }

@@ -34,8 +34,18 @@ namespace fliXNA_xbox
         public FlxRect deadzone;
         public FlxRect bounds;
 
+        public Texture2D buffer;
+        public Color bgColor;
+
+        public FlxSprite screen;
+
         protected float _zoom;
         protected FlxPoint _point;
+
+        protected Color _color;
+
+        protected Texture2D _flashBitmap;
+        protected DrawableGameComponent _flashSprite;
 
         public Matrix transform;
         public FlxPoint scroll;
@@ -46,6 +56,8 @@ namespace fliXNA_xbox
         protected Action _fxShakeComplete;
         protected FlxPoint _fxShakeOffset;
         protected uint _fxShakeDirection;
+
+        protected Texture2D _fill;
 
         public FlxCamera(float X, float Y, float Width, float Height, float Zoom = 1.0f)
             : base()
@@ -58,6 +70,14 @@ namespace fliXNA_xbox
             rotating = 0.0f;
             scroll = new FlxPoint();
             _point = new FlxPoint();
+
+            screen = new FlxSprite();
+            screen.makeGraphic(width, height, new Color(0, 0, 0));
+            screen.SetOriginToCorner();
+            buffer = screen.pixels;
+            bgColor = FlxG.bgColor;
+            _color = Color.Black;
+            
             target = null;
             deadzone = null;
             bounds = null;
@@ -69,6 +89,22 @@ namespace fliXNA_xbox
             _fxShakeOffset = new FlxPoint();
             _fxShakeDirection = 0;
         }
+
+        public override void destroy()
+        {
+            screen.destroy();
+            screen = null;
+            target = null;
+            scroll = null;
+            deadzone = null;
+            bounds = null;
+            _flashBitmap = null;
+            
+            _fxShakeComplete = null;
+            _fxShakeOffset = null;
+            _fill = null;
+        }
+
 
         // update camera scroll in here
         // make sure it stays within bounds

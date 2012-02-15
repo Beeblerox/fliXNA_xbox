@@ -170,6 +170,18 @@ namespace fliXNA_xbox
         /// </summary>
         static public float globalSeed = FlxU.random();
 
+
+        ///
+        ///FlxG.levels and FlxG.scores are generic global variables that can be used for various cross-state stuff.
+        ///
+
+        static public List<int> levels = new List<int>();
+        static public int level;
+        static public List<int> scores = new List<int>();
+        static public int score;
+
+
+
         /// <summary>
         /// Can be used to zoom the camera
         /// </summary>
@@ -189,6 +201,11 @@ namespace fliXNA_xbox
         /// Reference of the Safe Zone, useful for making sure your objects are visible across various televisions
         /// </summary>
         static public FlxRect safeZone;
+
+        /// <summary>
+        /// Internal storage system to prevent graphics from being used repeatedly in memory.
+        /// </summary>
+        static protected Dictionary<string, Texture2D> _cache = new Dictionary<string, Texture2D>();
 
         /// <summary>
         /// Call this to switch to a new state
@@ -405,5 +422,35 @@ namespace fliXNA_xbox
             //create state last
             FlxG.state.create();
         }
+
+        static public bool checkBitmapCache(String Key)
+		{
+			return (_cache[Key] != null);
+		}
+
+        static public Texture2D createBitmap(int Width, int Height, Color color, bool Unique = false, string Key = null)
+        {
+            int c = Convert.ToInt32(color);
+            if (Key == null)
+            {
+                Key = Width + "x" + Height + ":" + c;
+                if (Unique && checkBitmapCache(Key))
+                {
+                    int inc = 0;
+                    string ukey;
+                    do
+                    {
+                        ukey = Key + inc++;
+                    } while (checkBitmapCache(ukey));
+                    Key = ukey;
+                }
+
+            }
+            if (!checkBitmapCache(Key))
+                _cache[Key] = new Texture2D(graphicsDevice, Width, Height);
+            return _cache[Key];
+        }
+
+
     }
 }

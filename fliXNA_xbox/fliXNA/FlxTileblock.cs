@@ -29,5 +29,65 @@ namespace fliXNA_xbox
             active = false;
             immovable = true;
         }
+
+        public FlxTileblock loadTiles(Texture2D TileGraphic, int TileWidth, int TileHeight, int Empties)
+        {
+            if (TileGraphic == null)
+                return this;
+
+            FlxSprite sprite = new FlxSprite().loadGraphic(TileGraphic, true, false, TileWidth, TileHeight);
+            float spriteWidth = sprite.width;
+            float spriteHeight = sprite.height;
+
+            long total = sprite.frames + Empties;
+            bool regen = false;
+
+            if (width % sprite.width != 0)
+            {
+                width = (int)(width / spriteWidth + 1) * spriteWidth;
+                regen = true;
+            }
+            	if(height % sprite.height != 0)
+			{
+				height = (int)(height/spriteHeight+1)*spriteHeight;
+				regen = true;
+			}
+			if(regen)
+				makeGraphic(width,height,new Color(0,0,0));
+			else
+				this.fill(new Color(0,0,0));
+
+            int row = 0;
+            int column;
+            int destinationX;
+            int destinationY = 0;
+            int widthInTiles =(int)( width / spriteWidth );
+            int heightInTiles = (int)(height / spriteHeight);
+
+            while (row < heightInTiles)
+            {
+                destinationX = 0;
+                column = 0;
+                while (column < widthInTiles)
+                {
+                    if (FlxG.random() * total > Empties)
+                    {
+                        sprite.randomFrame();
+                        sprite.drawFrame();
+                        stamp(sprite, destinationX, destinationY);
+                    }
+                    destinationX += (int)spriteWidth;
+                    column++;
+                }
+                destinationY += (int)spriteHeight;
+                row++;
+            }
+
+            return this;
+
+        }
+    
     }
+
+
 }

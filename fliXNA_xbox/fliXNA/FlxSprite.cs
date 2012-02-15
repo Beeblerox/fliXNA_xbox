@@ -18,6 +18,7 @@ namespace fliXNA_xbox
         public FlxPoint origin;
         public FlxPoint offset;
         public FlxPoint scale;
+        public string blend;
         public Boolean finished;
         public float frameWidth;
         public float frameHeight;
@@ -56,6 +57,7 @@ namespace fliXNA_xbox
             origin = new FlxPoint();
             alpha = 1.0f;
             _color = Color.White * alpha;
+            blend = null;
 
             _animations = new List<FlxAnim>();
             _animated = false;
@@ -225,7 +227,9 @@ namespace fliXNA_xbox
                     {
                         //if the sprite is animated then the sourceRect needs to be changed to be the correct frame
                         if (_animated)
-                            sourceRect = new FlxRect(frameWidth * _curIndex, 0, frameWidth, frameHeight);
+                            //adds support for sprite sheets by using the image width/height, frame width/height, and current frame index to split up the source image into rects
+                            //insted of using a fixed value of 0and only supporting sprite strips.
+                            sourceRect = new FlxRect((((_curIndex) % (texture.Width / frameWidth)) * frameWidth), (((int)(_curIndex / (texture.Width / frameWidth))) * frameHeight), frameWidth, frameHeight);
                         Rectangle rect = new Rectangle((int)sourceRect.x, (int)sourceRect.y, (int)sourceRect.width, (int)sourceRect.height);
                         FlxG.spriteBatch.Draw(texture, getVec2(), rect, _color * alpha, angle, new Vector2(), scale.getVec2(), SpriteEffects.None, 0f);
                     }
@@ -257,6 +261,12 @@ namespace fliXNA_xbox
 			if(dirty)
 				calcFrame();
 		}
+
+        public void drawFrame(bool Force = false)
+        {
+            if (Force || dirty)
+                calcFrame();
+        }
 
         public void addAnimation(String Name, int[] Frames, float FrameRate = 1, Boolean Looped = true)
         {
@@ -324,6 +334,15 @@ namespace fliXNA_xbox
 			dirty = false;
 		}
 
+        /**
+        * Helper function that just sets origin to (0,0)
+        */
+        public void SetOriginToCorner()
+        {
+            origin.x = origin.y = 0;
+        }
+
+
         public uint facing
         {
             get { return _facing; }
@@ -333,6 +352,28 @@ namespace fliXNA_xbox
                 _facing = value;
             }
         }
+
+        /**
+         * Set <code>pixels</code> to any <code>Texture2D</code> object.
+         * Automatically adjust graphic size and render helpers.
+         */
+
+        public Texture2D pixels
+        {
+            get
+            {
+                return texture;
+            }
+            
+            set
+            {
+                texture = value;
+                width = frameWidth = texture.Width;
+                height = frameHeight = texture.Height;
+                resetHelpers();
+            }   
+        }
+            
 
         override public bool onScreen(FlxCamera Camera = null)
         {
@@ -395,6 +436,35 @@ namespace fliXNA_xbox
             get { return angle; }
             set { angle += value; }
         }
-        
+
+        public void fill(Color color)
+        {
+            Color[] colors = new Color[(int)width * (int)height];
+            for (int i = 0; i < colors.Length; i++)
+            {
+                colors[i] = new Color(color.ToVector3());
+            }
+            texture.SetData(colors);
+        }
+
+        public void randomFrame()
+        {
+            _curAnim = null;
+            _curIndex = (int)(FlxG.random() * (texture.Width / frameWidth));
+            dirty = true;
+        }
+
+        public void stamp(FlxSprite Brush, int X, int Y)
+        {
+            Brush.drawFrame();
+            Texture2D brushPixels = Brush.texture;
+
+            //Simple Draw
+            if((( Brush.angle == 0 ) || (Brush._bakedRotation > 0 )) && (Brush.scale.x == 1) && (Brush.scale.y == 1) && (Brush.blend == null))
+            {
+                
+            }
+        }
+
     }
 }
