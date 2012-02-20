@@ -92,6 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="fliXNA\FlxButton.cs" />
+    <Compile Include="fliXNA\system\FlxTile.cs" />
     <Compile Include="source\EzPlatformer.cs" />
     <Compile Include="source\Building.cs" />
     <Compile Include="fliXNA\system\FlxAnim.cs" />
@@ -117,7 +118,6 @@
     <Compile Include="fliXNA\FlxSprite.cs" />
     <Compile Include="fliXNA\FlxState.cs" />
     <Compile Include="fliXNA\FlxText.cs" />
-    <Compile Include="fliXNA\FlxTile.cs" />
     <Compile Include="fliXNA\FlxTilemap.cs" />
     <Compile Include="fliXNA\FlxU.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

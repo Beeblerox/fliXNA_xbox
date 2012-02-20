@@ -59,12 +59,13 @@ namespace fliXNA_xbox
                     FlxG.defaultFont,
                     _textField,
                     pos,
-                    (_color * alpha),
-                    rot,
-                    new Vector2(),
-                    _scale,
-                    SpriteEffects.None,
-                    0
+                    (_color * alpha)
+                    //,
+                    //rot,
+                    //new Vector2(),
+                    //_scale,
+                    //SpriteEffects.None,
+                    //0
 
                     );
             }
