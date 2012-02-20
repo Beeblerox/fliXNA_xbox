@@ -18,6 +18,8 @@ namespace fliXNA_xbox
         protected SpriteFont _font;
         protected Boolean _regen;
         public float _scale;
+
+        protected Vector4 _shadow;
         //protected Action<Color> _color;
 
         public FlxText(float X, float Y, float Width, String Text = null, SpriteFont Font = null)
@@ -35,6 +37,7 @@ namespace fliXNA_xbox
                 _font = Font;
 
             _regen = true;
+            _shadow = Vector4.Zero;
             allowCollisions = NONE;
             calcFrame();
             _scale = 0;
@@ -54,6 +57,16 @@ namespace fliXNA_xbox
                 Vector2 pos = new Vector2(x, y);
                 Vector2 orig = new Vector2(0,0);
                 Single rot = 0;
+                if (_shadow != Vector4.Zero)
+                {
+                    FlxG.spriteBatch.DrawString(
+                        FlxG.defaultFont,
+                        _textField,
+                        new Vector2(pos.X + 1, pos.Y + 1),
+                        shadow
+                    );
+
+                }
                 FlxG.spriteBatch.DrawString(
 
                     FlxG.defaultFont,
@@ -68,6 +81,8 @@ namespace fliXNA_xbox
                     //0
 
                     );
+
+
             }
         }
 
@@ -103,7 +118,12 @@ namespace fliXNA_xbox
             set { _font = value; }
         }
 
+        public Color shadow
+        {
+            get { return new Color(_shadow); }
 
+            set{ _shadow = value.ToVector4(); }
+        }
 
     }
 }

@@ -124,6 +124,7 @@ namespace fliXNA_xbox
 
             score = new FlxText(2, 2, 80);
             //score.shadow = 0xff000000;
+            score.shadow = Color.Black;
             score.text = "SCORE: " + (coins.countDead() * 100);
             add(score);
 

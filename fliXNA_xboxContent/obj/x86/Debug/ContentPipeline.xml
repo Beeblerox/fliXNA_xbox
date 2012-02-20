@@ -2,30 +2,211 @@
 <XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
   <Asset Type="Pipeline:BuildItemCollection">
     <Item>
-      <Source>ConsoleFont.spritefont</Source>
-      <Name>ConsoleFont</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\Steven\My Documents\gamedev\fliXNA\fliXNA\fliXNA_xbox\bin\x86\Debug\Content\ConsoleFont.xnb</Output>
-      <Time>2012-02-05T22:18:56.3125-08:00</Time>
-    </Item>
-    <Item>
-      <Source>default.png</Source>
-      <Name>default</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Documents and Settings\Steven\My Documents\gamedev\fliXNA\fliXNA\fliXNA_xbox\bin\x86\Debug\Content\default.xnb</Output>
-      <Time>2012-02-05T22:18:56.3125-08:00</Time>
-    </Item>
-    <Item>
       <Source>footsteps.png</Source>
       <Name>footsteps</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Documents and Settings\Steven\My Documents\gamedev\fliXNA\fliXNA\fliXNA_xbox\bin\x86\Debug\Content\footsteps.xnb</Output>
+      <Time>2012-02-05T22:18:56.3125-08:00</Time>
+    </Item>
+    <Item>
+      <Source>data\autotiles.png</Source>
+      <Name>data\autotiles</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Steven\My Documents\gamedev\fliXNA\fliXNA\fliXNA_xbox\bin\x86\Debug\Content\data\autotiles.xnb</Output>
+      <Time>2011-08-22T10:03:52-07:00</Time>
+    </Item>
+    <Item>
+      <Source>data\autotiles_alt.png</Source>
+      <Name>data\autotiles_alt</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Steven\My Documents\gamedev\fliXNA\fliXNA\fliXNA_xbox\bin\x86\Debug\Content\data\autotiles_alt.xnb</Output>
+      <Time>2011-08-22T10:03:52-07:00</Time>
+    </Item>
+    <Item>
+      <Source>data\button.png</Source>
+      <Name>data\button</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Steven\My Documents\gamedev\fliXNA\fliXNA\fliXNA_xbox\bin\x86\Debug\Content\data\button.xnb</Output>
+      <Time>2011-08-22T10:03:52-07:00</Time>
+    </Item>
+    <Item>
+      <Source>data\cursor.png</Source>
+      <Name>data\cursor</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Steven\My Documents\gamedev\fliXNA\fliXNA\fliXNA_xbox\bin\x86\Debug\Content\data\cursor.xnb</Output>
+      <Time>2011-08-22T10:03:52-07:00</Time>
+    </Item>
+    <Item>
+      <Source>data\default.png</Source>
+      <Name>data\default</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Steven\My Documents\gamedev\fliXNA\fliXNA\fliXNA_xbox\bin\x86\Debug\Content\data\default.xnb</Output>
+      <Time>2011-08-22T10:03:52-07:00</Time>
+    </Item>
+    <Item>
+      <Source>data\handle.png</Source>
+      <Name>data\handle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Steven\My Documents\gamedev\fliXNA\fliXNA\fliXNA_xbox\bin\x86\Debug\Content\data\handle.xnb</Output>
+      <Time>2011-08-22T10:03:52-07:00</Time>
+    </Item>
+    <Item>
+      <Source>data\logo.png</Source>
+      <Name>data\logo</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Steven\My Documents\gamedev\fliXNA\fliXNA\fliXNA_xbox\bin\x86\Debug\Content\data\logo.xnb</Output>
+      <Time>2011-08-22T10:03:52-07:00</Time>
+    </Item>
+    <Item>
+      <Source>data\logo_corners.png</Source>
+      <Name>data\logo_corners</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Steven\My Documents\gamedev\fliXNA\fliXNA\fliXNA_xbox\bin\x86\Debug\Content\data\logo_corners.xnb</Output>
+      <Time>2011-08-22T10:03:52-07:00</Time>
+    </Item>
+    <Item>
+      <Source>data\logo_light.png</Source>
+      <Name>data\logo_light</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Steven\My Documents\gamedev\fliXNA\fliXNA\fliXNA_xbox\bin\x86\Debug\Content\data\logo_light.xnb</Output>
+      <Time>2011-08-22T10:03:52-07:00</Time>
+    </Item>
+    <Item>
+      <Source>data\vcr\flixel.png</Source>
+      <Name>data\vcr\flixel</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Steven\My Documents\gamedev\fliXNA\fliXNA\fliXNA_xbox\bin\x86\Debug\Content\data\vcr\flixel.xnb</Output>
+      <Time>2011-08-22T10:03:52-07:00</Time>
+    </Item>
+    <Item>
+      <Source>data\vcr\open.png</Source>
+      <Name>data\vcr\open</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Steven\My Documents\gamedev\fliXNA\fliXNA\fliXNA_xbox\bin\x86\Debug\Content\data\vcr\open.xnb</Output>
+      <Time>2011-08-22T10:03:52-07:00</Time>
+    </Item>
+    <Item>
+      <Source>data\vcr\pause.png</Source>
+      <Name>data\vcr\pause</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Steven\My Documents\gamedev\fliXNA\fliXNA\fliXNA_xbox\bin\x86\Debug\Content\data\vcr\pause.xnb</Output>
+      <Time>2011-08-22T10:03:52-07:00</Time>
+    </Item>
+    <Item>
+      <Source>data\vcr\play.png</Source>
+      <Name>data\vcr\play</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Steven\My Documents\gamedev\fliXNA\fliXNA\fliXNA_xbox\bin\x86\Debug\Content\data\vcr\play.xnb</Output>
+      <Time>2011-08-22T10:03:52-07:00</Time>
+    </Item>
+    <Item>
+      <Source>data\vcr\record_off.png</Source>
+      <Name>data\vcr\record_off</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Steven\My Documents\gamedev\fliXNA\fliXNA\fliXNA_xbox\bin\x86\Debug\Content\data\vcr\record_off.xnb</Output>
+      <Time>2011-08-22T10:03:52-07:00</Time>
+    </Item>
+    <Item>
+      <Source>data\vcr\record_on.png</Source>
+      <Name>data\vcr\record_on</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Steven\My Documents\gamedev\fliXNA\fliXNA\fliXNA_xbox\bin\x86\Debug\Content\data\vcr\record_on.xnb</Output>
+      <Time>2011-08-22T10:03:52-07:00</Time>
+    </Item>
+    <Item>
+      <Source>data\vcr\restart.png</Source>
+      <Name>data\vcr\restart</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Steven\My Documents\gamedev\fliXNA\fliXNA\fliXNA_xbox\bin\x86\Debug\Content\data\vcr\restart.xnb</Output>
+      <Time>2011-08-22T10:03:52-07:00</Time>
+    </Item>
+    <Item>
+      <Source>data\vcr\step.png</Source>
+      <Name>data\vcr\step</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Steven\My Documents\gamedev\fliXNA\fliXNA\fliXNA_xbox\bin\x86\Debug\Content\data\vcr\step.xnb</Output>
+      <Time>2011-08-22T10:03:52-07:00</Time>
+    </Item>
+    <Item>
+      <Source>data\vcr\stop.png</Source>
+      <Name>data\vcr\stop</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Steven\My Documents\gamedev\fliXNA\fliXNA\fliXNA_xbox\bin\x86\Debug\Content\data\vcr\stop.xnb</Output>
+      <Time>2011-08-22T10:03:52-07:00</Time>
+    </Item>
+    <Item>
+      <Source>data\vis\bounds.png</Source>
+      <Name>data\vis\bounds</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Steven\My Documents\gamedev\fliXNA\fliXNA\fliXNA_xbox\bin\x86\Debug\Content\data\vis\bounds.xnb</Output>
+      <Time>2011-08-22T10:03:52-07:00</Time>
+    </Item>
+    <Item>
+      <Source>data\beep.mp3</Source>
+      <Name>data\beep</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Steven\My Documents\gamedev\fliXNA\fliXNA\fliXNA_xbox\bin\x86\Debug\Content\data\beep.xnb</Output>
+      <Extra>C:\Documents and Settings\Steven\My Documents\gamedev\fliXNA\fliXNA\fliXNA_xbox\bin\x86\Debug\Content\data\beep.wma</Extra>
+      <Time>2011-08-22T10:03:52-07:00</Time>
+    </Item>
+    <Item>
+      <Source>data\deffont.spritefont</Source>
+      <Name>data\deffont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Steven\My Documents\gamedev\fliXNA\fliXNA\fliXNA_xbox\bin\x86\Debug\Content\data\deffont.xnb</Output>
+      <Time>2012-02-18T00:50:10.671875-08:00</Time>
+    </Item>
+    <Item>
+      <Source>ConsoleFont.spritefont</Source>
+      <Name>ConsoleFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Steven\My Documents\gamedev\fliXNA\fliXNA\fliXNA_xbox\bin\x86\Debug\Content\ConsoleFont.xnb</Output>
       <Time>2012-02-05T22:18:56.3125-08:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>

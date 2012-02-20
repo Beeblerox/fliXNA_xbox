@@ -92,6 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="fliXNA\FlxButton.cs" />
+    <Compile Include="fliXNA\FlxGame.cs" />
     <Compile Include="fliXNA\system\FlxTile.cs" />
     <Compile Include="source\EzPlatformer.cs" />
     <Compile Include="source\Building.cs" />
@@ -102,7 +103,6 @@
     <Compile Include="fliXNA\system\FlxConsole.cs" />
     <Compile Include="fliXNA\FlxEmitter.cs" />
     <Compile Include="fliXNA\FlxG.cs" />
-    <Compile Include="fliXNA\system\FlxGame.cs" />
     <Compile Include="fliXNA\system\FlxGamepad.cs" />
     <Compile Include="fliXNA\FlxGroup.cs" />
     <Compile Include="fliXNA\system\FlxKeyboard.cs" />

@@ -403,7 +403,7 @@ namespace fliXNA_xbox
             FlxG.sounds = new FlxGroup();
             FlxG.console = new FlxConsole();
             FlxG.worldBounds = new FlxRect();
-            FlxG.defaultFont = FlxG.content.Load<SpriteFont>("ConsoleFont");
+            FlxG.defaultFont = FlxG.content.Load<SpriteFont>("data/deffont");
             //FlxG.zoom = 1f;
             FlxG.rotation = 0f;
             FlxG.pad1 = new FlxGamepad(PlayerIndex.One);

@@ -14,7 +14,7 @@ namespace fliXNA_xbox
 {
     public class FlxSprite : FlxObject
     {
-        protected Texture2D ImgDefault = FlxG.content.Load<Texture2D>("default");
+        protected Texture2D ImgDefault = FlxG.content.Load<Texture2D>("data/default");
         public FlxPoint origin;
         public FlxPoint offset;
         public FlxPoint scale;
